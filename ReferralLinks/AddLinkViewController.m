@@ -22,4 +22,16 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark -
+#pragma mark Actions
+- (IBAction)addLink:(id)sender {
+    // Dismiss View Controller
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)closeAddLink:(id)sender {
+    // Dismiss View Controller
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end

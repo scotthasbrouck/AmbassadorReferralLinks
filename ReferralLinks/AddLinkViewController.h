@@ -12,12 +12,15 @@
 
 //___________ UI Elements ___________
 // > Label for messaging
+@property (weak, nonatomic) IBOutlet UILabel *addLinkMessage;
 // > TextField for link text
+@property (weak, nonatomic) IBOutlet UITextField *linkTextField;
 // > ImageView for sweet icon
 // > ImageView for Steve Jobs' Face
-// > Button to save link
 
 //___________ Methods ___________
 // > save link to MOC
+- (IBAction)addLink:(id)sender;
+- (IBAction)closeAddLink:(id)sender;
 
 @end

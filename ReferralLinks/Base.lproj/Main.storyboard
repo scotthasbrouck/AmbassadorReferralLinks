@@ -97,7 +97,14 @@
                             <constraint firstAttribute="trailingMargin" secondItem="9oM-27-ZST" secondAttribute="trailing" id="mpG-Z2-Bzg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dGt-hs-ZSi"/>
+                    <navigationItem key="navigationItem" id="dGt-hs-ZSi">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="ZoT-Id-JhP"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fJv-NE-0vR">
+                            <connections>
+                                <segue destination="G3C-rY-sm4" kind="presentation" id="bly-8s-LCz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="9oM-27-ZST" id="IjU-LW-uqX"/>
                     </connections>
@@ -105,6 +112,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1192" y="265"/>
+        </scene>
+        <!--Add Link View Controller-->
+        <scene sceneID="kBs-1C-vEW">
+            <objects>
+                <viewController id="uBI-WA-4Hm" customClass="AddLinkViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BK4-kw-Rpd"/>
+                        <viewControllerLayoutGuide type="bottom" id="J5P-Jk-sxX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nzZ-m7-tPA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="HackerNews" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KeK-k3-JOO">
+                                <rect key="frame" x="16" y="164" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Wgm-Zr-dbL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Referral Link" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufk-Ky-4SB">
+                                <rect key="frame" x="16" y="103" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="eyl-PV-s3t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ufk-Ky-4SB" firstAttribute="leading" secondItem="nzZ-m7-tPA" secondAttribute="leadingMargin" constant="263" id="9DI-OE-HBS"/>
+                            <constraint firstItem="Ufk-Ky-4SB" firstAttribute="top" secondItem="BK4-kw-Rpd" secondAttribute="bottom" constant="39" id="HXL-QH-2Wb"/>
+                            <constraint firstItem="KeK-k3-JOO" firstAttribute="leading" secondItem="nzZ-m7-tPA" secondAttribute="leadingMargin" id="LZG-AX-TkH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ufk-Ky-4SB" secondAttribute="trailing" constant="263" id="NaS-Fq-dWS"/>
+                            <constraint firstItem="Ufk-Ky-4SB" firstAttribute="trailing" secondItem="nzZ-m7-tPA" secondAttribute="trailingMargin" id="PzV-9c-3lb"/>
+                            <constraint firstItem="Ufk-Ky-4SB" firstAttribute="leading" secondItem="nzZ-m7-tPA" secondAttribute="leadingMargin" id="Vdz-5G-tVI"/>
+                            <constraint firstItem="KeK-k3-JOO" firstAttribute="top" secondItem="BK4-kw-Rpd" secondAttribute="bottom" constant="100" id="qkB-7A-Etv"/>
+                            <constraint firstItem="KeK-k3-JOO" firstAttribute="trailing" secondItem="nzZ-m7-tPA" secondAttribute="trailingMargin" id="uC0-6g-YLP"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9DI-OE-HBS"/>
+                                <exclude reference="NaS-Fq-dWS"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="7aF-Fl-Aaw">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ML8-pa-f37">
+                            <connections>
+                                <action selector="closeAddLink:" destination="uBI-WA-4Hm" id="dUo-RF-URf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="MGc-au-ktu">
+                            <connections>
+                                <action selector="addLink:" destination="uBI-WA-4Hm" id="8Nh-ht-9RM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="linkTextField" destination="KeK-k3-JOO" id="0la-b1-HUm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WaS-Ne-PEX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2783" y="265"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="H7g-Q3-4v3">
@@ -122,7 +197,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MEr-JC-9qh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="326" y="-428"/>
+            <point key="canvasLocation" x="675" y="-462"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="u5S-uj-y7p">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G3C-rY-sm4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gOu-4j-d2g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uBI-WA-4Hm" kind="relationship" relationship="rootViewController" id="k2T-j3-Gej"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G2U-1w-h6Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1971" y="265"/>
         </scene>
     </scenes>
 </document>
