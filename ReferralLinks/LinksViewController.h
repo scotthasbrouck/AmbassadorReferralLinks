@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LinksViewController : UIViewController
+@interface LinksViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 //___________ UI Elements ___________
 // > TableView for links
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 // > Navigation Controller
 
 //___________ Methods ___________

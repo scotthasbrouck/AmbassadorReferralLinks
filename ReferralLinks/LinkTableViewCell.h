@@ -11,8 +11,10 @@
 @interface LinkTableViewCell : UITableViewCell
 
 //___________ UI Elements ___________
-// > TextField for link text
+// > Label for link text
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 // > Label for click count
+@property (weak, nonatomic) IBOutlet UILabel *countLabel;
 
 //___________ Methods ___________
 // > View Link on Touch

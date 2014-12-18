@@ -2,7 +2,7 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Link" syncable="YES">
         <attribute name="count" attributeType="Integer 64" minValueString="0" defaultValueString="0" syncable="YES"/>
-        <attribute name="title" attributeType="String" minValueString="1" maxValueString="100" regularExpressionString="[A-Za-z]" syncable="YES"/>
+        <attribute name="title" attributeType="String" minValueString="1" maxValueString="100" syncable="YES"/>
     </entity>
     <elements>
         <element name="Link" positionX="-63" positionY="-18" width="128" height="73"/>
