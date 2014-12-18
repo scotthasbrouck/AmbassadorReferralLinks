@@ -22,8 +22,7 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark -
-#pragma mark Actions
+#pragma mark Button actions
 - (IBAction)addLink:(id)sender {
     // Dismiss View Controller
     [self dismissViewControllerAnimated:YES completion:nil];

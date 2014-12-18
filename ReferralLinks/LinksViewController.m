@@ -8,6 +8,7 @@
 
 #import "LinksViewController.h"
 #import "AppDelegate.h"
+#import "LinkTableViewCell.h"
 
 @interface LinksViewController ()
 
@@ -46,7 +47,45 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Table view data source
+#pragma mark - Fetch delegate methods
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView beginUpdates];
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView endUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+    switch (type) {
+        case NSFetchedResultsChangeInsert: {
+            [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        }
+        case NSFetchedResultsChangeDelete: {
+            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        }
+        case NSFetchedResultsChangeUpdate: {
+            [self configureCell:(LinkTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            break;
+        }
+        case NSFetchedResultsChangeMove: {
+            //don't need to implement this
+            break;
+        }
+    }
+}
+
+- (void)configureCell:(LinkTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    //Fetch
+    NSManagedObject *link = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    //Update cell
+    [cell.titleLabel setText:[link valueForKey:@"title"]];
+    [cell.countLabel setText:[NSString stringWithFormat:@"%d", (int)[link valueForKey:@"count"]]];
+}
+
+#pragma mark - Table data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
