@@ -101,7 +101,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="ZoT-Id-JhP"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fJv-NE-0vR">
                             <connections>
-                                <segue destination="G3C-rY-sm4" kind="presentation" id="bly-8s-LCz"/>
+                                <segue destination="G3C-rY-sm4" kind="presentation" identifier="addLinkViewController" id="bly-8s-LCz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @interface AddLinkViewController : UIViewController
 
@@ -17,6 +18,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *linkTextField;
 // > ImageView for sweet icon
 // > ImageView for Steve Jobs' Face
+
+//___________ Objects ___________
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 //___________ Methods ___________
 // > save link to MOC

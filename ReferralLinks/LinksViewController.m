@@ -9,6 +9,7 @@
 #import "LinksViewController.h"
 #import "AppDelegate.h"
 #import "LinkTableViewCell.h"
+#import "AddLinkViewController.h"
 
 @interface LinksViewController ()
 
@@ -125,9 +126,12 @@
 
  #pragma mark - Navigation
 
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-     // Get the new view controller using [segue destinationViewController].
-     // Pass the selected object to the new view controller.
- }
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"addLinkViewController"]) {
+        UINavigationController *navController = (UINavigationController *)[segue destinationViewController];
+        AddLinkViewController *viewController = (AddLinkViewController *)[navController topViewController];
+        [viewController setManagedObjectContext:self.managedObjectContext];
+    }
+}
 
 @end
