@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "LinkTableViewCell.h"
 #import "AddLinkViewController.h"
+#import "UpdateLinkViewController.h"
 
 @interface LinksViewController ()
 
@@ -83,7 +84,15 @@
     NSManagedObject *link = [self.fetchedResultsController objectAtIndexPath:indexPath];
     //Update cell
     [cell.titleLabel setText:[link valueForKey:@"title"]];
-    [cell.countLabel setText:[NSString stringWithFormat:@"%@", (NSNumber *)[link valueForKey:@"count"]]];
+    [cell.countLabel setText:[NSString stringWithFormat:@"%@ clicks", (NSNumber *)[link valueForKey:@"count"]]];
+}
+
+- (IBAction)toggleEditMode:(id)sender {
+    if(self.tableView.editing) {
+        [self.tableView setEditing: NO animated: YES];
+    } else {
+      [self.tableView setEditing: YES animated: YES];
+    }
 }
 
 #pragma mark - Table data source
@@ -112,10 +121,11 @@
 
  - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
      if (editingStyle == UITableViewCellEditingStyleDelete) {
-     // Delete the row from the data source
-         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+         NSManagedObject *linkRecord = [self.fetchedResultsController objectAtIndexPath:indexPath];
+         
+         if (linkRecord) {
+             [self.fetchedResultsController.managedObjectContext deleteObject:linkRecord];
+         }
      }
  }
 
@@ -123,14 +133,40 @@
      return NO;
  }
 
+#pragma mark - table delegate methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    [self setSelection:indexPath];
+    
+    [self performSegueWithIdentifier: @"updateLinkViewController" sender:self];
+}
 
  #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    //Adding a link
     if ([segue.identifier isEqualToString:@"addLinkViewController"]) {
         UINavigationController *navController = (UINavigationController *)[segue destinationViewController];
         AddLinkViewController *viewController = (AddLinkViewController *)[navController topViewController];
         [viewController setManagedObjectContext:self.managedObjectContext];
+    }
+    //updating a link
+    else if ([segue.identifier isEqualToString:@"updateLinkViewController"]) {
+        UpdateLinkViewController *viewController = (UpdateLinkViewController *)[segue destinationViewController];
+        [viewController setManagedObjectContext:self.managedObjectContext];
+        
+        if (self.selection) {
+            NSManagedObject *linkRecord = [self.fetchedResultsController objectAtIndexPath:self.selection];
+            
+            if (linkRecord) {
+                [viewController setLinkRecord:linkRecord];
+            }
+            
+            // Reset Selection
+            [self setSelection:nil];
+        }
     }
 }
 

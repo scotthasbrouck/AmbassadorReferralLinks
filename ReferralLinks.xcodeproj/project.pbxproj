@@ -18,6 +18,7 @@
 		D2D7D0B31A42AAA50082B5AB /* LinkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7D0B21A42AAA50082B5AB /* LinkTableViewCell.m */; };
 		D2D7D0B71A42AB950082B5AB /* AddLinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7D0B61A42AB950082B5AB /* AddLinkViewController.m */; };
 		D2D7D0BA1A42AD230082B5AB /* IndividualLinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7D0B91A42AD230082B5AB /* IndividualLinkViewController.m */; };
+		D2D7D0C11A42D4670082B5AB /* UpdateLinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7D0C01A42D4670082B5AB /* UpdateLinkViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		D2D7D0B61A42AB950082B5AB /* AddLinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddLinkViewController.m; sourceTree = "<group>"; };
 		D2D7D0B81A42AD230082B5AB /* IndividualLinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndividualLinkViewController.h; sourceTree = "<group>"; };
 		D2D7D0B91A42AD230082B5AB /* IndividualLinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndividualLinkViewController.m; sourceTree = "<group>"; };
+		D2D7D0BF1A42D4670082B5AB /* UpdateLinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateLinkViewController.h; sourceTree = "<group>"; };
+		D2D7D0C01A42D4670082B5AB /* UpdateLinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateLinkViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 				D2D7D0931A42A2910082B5AB /* LinksViewController.m */,
 				D2D7D0B11A42AAA50082B5AB /* LinkTableViewCell.h */,
 				D2D7D0B21A42AAA50082B5AB /* LinkTableViewCell.m */,
+				D2D7D0BF1A42D4670082B5AB /* UpdateLinkViewController.h */,
+				D2D7D0C01A42D4670082B5AB /* UpdateLinkViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 				D2D7D0B31A42AAA50082B5AB /* LinkTableViewCell.m in Sources */,
 				D2D7D0941A42A2910082B5AB /* LinksViewController.m in Sources */,
 				D2D7D0BA1A42AD230082B5AB /* IndividualLinkViewController.m in Sources */,
+				D2D7D0C11A42D4670082B5AB /* UpdateLinkViewController.m in Sources */,
 				D2D7D0B71A42AB950082B5AB /* AddLinkViewController.m in Sources */,
 				D2D7D08B1A42A2910082B5AB /* main.m in Sources */,
 			);

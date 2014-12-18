@@ -19,8 +19,10 @@
 //___________ Objects ___________
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSIndexPath *selection;
 
 //___________ Methods ___________
 // > View Link on Touch
+- (IBAction)toggleEditMode:(id)sender;
 
 @end

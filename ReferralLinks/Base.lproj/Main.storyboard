@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9oM-27-ZST">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9oM-27-ZST">
                                 <rect key="frame" x="0.0" y="0.0" width="584" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -98,7 +98,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dGt-hs-ZSi">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="ZoT-Id-JhP"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="ZoT-Id-JhP">
+                            <connections>
+                                <action selector="toggleEditMode:" destination="BYZ-38-t0r" id="XeT-aI-vy7"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fJv-NE-0vR">
                             <connections>
                                 <segue destination="G3C-rY-sm4" kind="presentation" identifier="addLinkViewController" id="bly-8s-LCz"/>
@@ -107,6 +111,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="9oM-27-ZST" id="IjU-LW-uqX"/>
+                        <segue destination="lv0-hf-bdM" kind="show" identifier="updateLinkViewController" id="5zT-pH-t8G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -197,7 +202,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MEr-JC-9qh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="675" y="-462"/>
+            <point key="canvasLocation" x="675" y="-475"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u5S-uj-y7p">
@@ -216,6 +221,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G2U-1w-h6Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1971" y="265"/>
+        </scene>
+        <!--Update Link View Controller-->
+        <scene sceneID="mtF-K7-jEu">
+            <objects>
+                <viewController id="lv0-hf-bdM" customClass="UpdateLinkViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="24K-Ob-eJx"/>
+                        <viewControllerLayoutGuide type="bottom" id="nIP-58-LkW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Epm-zj-r0k">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update a Referral Link" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvY-Tk-rB1">
+                                <rect key="frame" x="16" y="118" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Ite-s5-pRU"/>
+                                    <constraint firstAttribute="height" constant="21" id="WNe-kZ-QT3"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="z4f-VJ-qaH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="WNe-kZ-QT3"/>
+                                        <exclude reference="z4f-VJ-qaH"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="HackerNews" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f0A-od-a0O">
+                                <rect key="frame" x="16" y="169" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="0DH-kS-XJv"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="5VG-VW-dfp"/>
+                                    <constraint firstAttribute="height" constant="30" id="6ef-L4-niZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0DH-kS-XJv"/>
+                                        <exclude reference="5VG-VW-dfp"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f0A-od-a0O" firstAttribute="top" secondItem="gvY-Tk-rB1" secondAttribute="bottom" constant="41" id="7HP-LO-dyd"/>
+                            <constraint firstItem="f0A-od-a0O" firstAttribute="leading" secondItem="Epm-zj-r0k" secondAttribute="leadingMargin" id="9Hl-Ct-NdP"/>
+                            <constraint firstItem="gvY-Tk-rB1" firstAttribute="top" secondItem="24K-Ob-eJx" secondAttribute="bottom" constant="8" id="LN1-IN-2U7"/>
+                            <constraint firstItem="gvY-Tk-rB1" firstAttribute="top" secondItem="24K-Ob-eJx" secondAttribute="bottom" constant="54" id="Mqy-RK-5A2"/>
+                            <constraint firstItem="f0A-od-a0O" firstAttribute="trailing" secondItem="Epm-zj-r0k" secondAttribute="trailingMargin" id="NoG-lB-i8e"/>
+                            <constraint firstItem="f0A-od-a0O" firstAttribute="top" secondItem="gvY-Tk-rB1" secondAttribute="bottom" constant="30" id="TpM-fq-aE4"/>
+                            <constraint firstItem="gvY-Tk-rB1" firstAttribute="trailing" secondItem="Epm-zj-r0k" secondAttribute="trailingMargin" id="b15-Hd-AyM"/>
+                            <constraint firstItem="gvY-Tk-rB1" firstAttribute="leading" secondItem="Epm-zj-r0k" secondAttribute="leadingMargin" id="jys-7V-9kG"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="LN1-IN-2U7"/>
+                                <exclude reference="7HP-LO-dyd"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="Mze-mh-FAP"/>
+                        <barButtonItem title="Item" id="ZCb-xr-hXL"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="Lgs-33-XKh">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ALT-Ao-eGH">
+                            <connections>
+                                <action selector="closeUpdateLink:" destination="lv0-hf-bdM" id="Duv-0H-Xq5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="qyn-xG-psK">
+                            <connections>
+                                <action selector="updateLink:" destination="lv0-hf-bdM" id="fnk-Kq-9lv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="linkTextField" destination="f0A-od-a0O" id="gNQ-dF-vaC"/>
+                        <outlet property="updateLinkMessage" destination="gvY-Tk-rB1" id="Lsf-n5-aPG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nwY-KF-cTR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1192" y="1041"/>
         </scene>
     </scenes>
 </document>
