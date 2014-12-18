@@ -83,7 +83,7 @@
     NSManagedObject *link = [self.fetchedResultsController objectAtIndexPath:indexPath];
     //Update cell
     [cell.titleLabel setText:[link valueForKey:@"title"]];
-    [cell.countLabel setText:[NSString stringWithFormat:@"%d", (int)[link valueForKey:@"count"]]];
+    [cell.countLabel setText:[NSString stringWithFormat:@"%@", (NSNumber *)[link valueForKey:@"count"]]];
 }
 
 #pragma mark - Table data source
