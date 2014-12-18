@@ -7,6 +7,7 @@
 //
 
 #import "LinksViewController.h"
+#import "AppDelegate.h"
 
 @interface LinksViewController ()
 
@@ -15,6 +16,29 @@
 @implementation LinksViewController
 
 - (void)viewDidLoad {
+    
+    //set MOC
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = delegate.managedObjectContext;
+    
+    //Init Fetch
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Link"];
+    
+    //Sort by count
+    [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"count" ascending:YES]]];
+    
+    //Init Fetch Results
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+
+    [self.fetchedResultsController setDelegate:self];
+    NSError *error = nil;
+    [self.fetchedResultsController performFetch:&error];
+    
+    if (error) {
+        NSLog(@"Fetch error");
+        NSLog(@"%@, %@", error, error.localizedDescription);
+    }
+    
     [super viewDidLoad];
 }
 

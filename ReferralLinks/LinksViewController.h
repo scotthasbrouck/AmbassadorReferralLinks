@@ -7,13 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-@interface LinksViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface LinksViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 
 //___________ UI Elements ___________
 // > TableView for links
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 // > Navigation Controller
+
+//___________ Objects ___________
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 //___________ Methods ___________
 // > View Link on Touch
