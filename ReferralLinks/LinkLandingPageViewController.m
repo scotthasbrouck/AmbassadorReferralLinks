@@ -18,7 +18,7 @@
     
     //set label value
     if (self.linkRecord) {
-        [self.linkTextLabel setText:[NSString stringWithFormat:@"%@ is clogging the tubes!", [self.linkRecord valueForKey:@"title"]]];
+        [self.linkTextLabel setText:[NSString stringWithFormat:@"%@ is a series of tubes!", [self.linkRecord valueForKey:@"title"]]];
     }
     
     //increment count

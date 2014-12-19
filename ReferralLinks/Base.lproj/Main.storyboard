@@ -17,19 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Referral Link Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trE-8G-5VM">
-                                <rect key="frame" x="0.0" y="120" width="568" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TedStevens.png" translatesAutoresizingMaskIntoConstraints="NO" id="cO2-Rp-TW0">
+                                <rect key="frame" x="126" y="228" width="349" height="144"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Referral Link Text" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trE-8G-5VM">
+                                <rect key="frame" x="306" y="253" width="152" height="94"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="5N7-JP-Uif"/>
                                     <constraint firstAttribute="height" constant="21" id="OJA-r8-nLf"/>
+                                    <constraint firstAttribute="width" constant="152" id="RbU-TR-EPR"/>
+                                    <constraint firstAttribute="width" constant="152" id="UgY-W1-SlR"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="db1-vN-ZfS"/>
+                                    <constraint firstAttribute="height" constant="94" id="m7b-9c-Kut"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="5N7-JP-Uif"/>
                                         <exclude reference="OJA-r8-nLf"/>
+                                        <exclude reference="UgY-W1-SlR"/>
                                         <exclude reference="db1-vN-ZfS"/>
                                     </mask>
                                 </variation>
@@ -37,10 +45,33 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="trE-8G-5VM" firstAttribute="top" secondItem="Tmc-Kp-JLr" secondAttribute="bottom" constant="183" id="4o5-SA-KyQ"/>
                             <constraint firstItem="trE-8G-5VM" firstAttribute="leading" secondItem="U0k-AX-FfV" secondAttribute="leadingMargin" constant="-16" id="AiL-vv-4Ee"/>
+                            <constraint firstItem="trE-8G-5VM" firstAttribute="leading" secondItem="U0k-AX-FfV" secondAttribute="leadingMargin" constant="290" id="FjL-Pi-VLW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="trE-8G-5VM" secondAttribute="trailing" constant="16" id="Fts-rs-JZe"/>
+                            <constraint firstAttribute="centerY" secondItem="trE-8G-5VM" secondAttribute="centerY" id="HWT-vY-h6p"/>
+                            <constraint firstAttribute="centerY" secondItem="cO2-Rp-TW0" secondAttribute="centerY" id="Wco-sE-CjQ"/>
+                            <constraint firstItem="trE-8G-5VM" firstAttribute="trailing" secondItem="cO2-Rp-TW0" secondAttribute="trailing" constant="-17" id="WuM-Je-mL5"/>
+                            <constraint firstAttribute="centerX" secondItem="cO2-Rp-TW0" secondAttribute="centerX" id="XZ7-HJ-jOt"/>
+                            <constraint firstItem="trE-8G-5VM" firstAttribute="top" secondItem="Tmc-Kp-JLr" secondAttribute="bottom" constant="183" id="YdF-Km-GXC"/>
                             <constraint firstItem="trE-8G-5VM" firstAttribute="top" secondItem="Tmc-Kp-JLr" secondAttribute="bottom" constant="56" id="fAx-cn-YGx"/>
+                            <constraint firstAttribute="trailing" secondItem="trE-8G-5VM" secondAttribute="trailing" constant="142" id="lR0-Ee-xIC"/>
+                            <constraint firstItem="SQ7-4c-EAF" firstAttribute="top" secondItem="trE-8G-5VM" secondAttribute="bottom" constant="259" id="r6p-Mi-VsW"/>
+                            <constraint firstItem="trE-8G-5VM" firstAttribute="centerX" secondItem="cO2-Rp-TW0" secondAttribute="centerX" constant="81.5" id="w3f-1S-j4i"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4o5-SA-KyQ"/>
+                                <exclude reference="AiL-vv-4Ee"/>
+                                <exclude reference="FjL-Pi-VLW"/>
+                                <exclude reference="Fts-rs-JZe"/>
+                                <exclude reference="WuM-Je-mL5"/>
+                                <exclude reference="YdF-Km-GXC"/>
+                                <exclude reference="fAx-cn-YGx"/>
+                                <exclude reference="lR0-Ee-xIC"/>
+                                <exclude reference="r6p-Mi-VsW"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="linkTextLabel" destination="trE-8G-5VM" id="q0s-7Z-AgU"/>
@@ -50,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="800" y="1010"/>
         </scene>
-        <!--Links View Controller-->
+        <!--The Internet-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LinksViewController" sceneMemberID="viewController">
+                <viewController title="The Internet" id="BYZ-38-t0r" customClass="LinksViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -63,7 +94,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9oM-27-ZST">
-                                <rect key="frame" x="0.0" y="0.0" width="584" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LinkCell" id="zE9-uK-d1Z" customClass="LinkTableViewCell">
@@ -72,7 +103,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YA-EH-NG2">
-                                                    <rect key="frame" x="8" y="11" width="568" height="21"/>
+                                                    <rect key="frame" x="38" y="11" width="554" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="7nT-0Z-2TD"/>
                                                         <constraint firstAttribute="width" constant="429" id="IGw-d3-c7g"/>
@@ -91,7 +122,7 @@
                                                 <constraint firstItem="3YA-EH-NG2" firstAttribute="top" secondItem="RX4-Mi-sct" secondAttribute="topMargin" constant="3" id="0Vo-7s-j5F"/>
                                                 <constraint firstItem="3YA-EH-NG2" firstAttribute="centerY" secondItem="RX4-Mi-sct" secondAttribute="centerY" id="2dd-r2-C1y"/>
                                                 <constraint firstItem="3YA-EH-NG2" firstAttribute="trailing" secondItem="RX4-Mi-sct" secondAttribute="trailingMargin" id="Me1-qB-bUh"/>
-                                                <constraint firstItem="3YA-EH-NG2" firstAttribute="leading" secondItem="RX4-Mi-sct" secondAttribute="leadingMargin" id="Wlf-Cn-Ls0"/>
+                                                <constraint firstItem="3YA-EH-NG2" firstAttribute="leading" secondItem="RX4-Mi-sct" secondAttribute="leadingMargin" constant="30" id="Wlf-Cn-Ls0"/>
                                                 <constraint firstItem="3YA-EH-NG2" firstAttribute="leading" secondItem="RX4-Mi-sct" secondAttribute="leadingMargin" id="f38-6B-CCe"/>
                                                 <constraint firstItem="3YA-EH-NG2" firstAttribute="top" secondItem="RX4-Mi-sct" secondAttribute="topMargin" id="i0V-DG-3df"/>
                                             </constraints>
@@ -119,10 +150,10 @@
                             <constraint firstItem="9oM-27-ZST" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Jem-DR-0Sd"/>
                             <constraint firstItem="9oM-27-ZST" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="cQU-U2-gx1"/>
                             <constraint firstItem="9oM-27-ZST" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="mEZ-Gy-Vwm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9oM-27-ZST" secondAttribute="trailing" id="mpG-Z2-Bzg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9oM-27-ZST" secondAttribute="trailing" constant="-16" id="mpG-Z2-Bzg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dGt-hs-ZSi">
+                    <navigationItem key="navigationItem" title="The Internet" id="dGt-hs-ZSi">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="ZoT-Id-JhP">
                             <connections>
                                 <action selector="toggleEditMode:" destination="BYZ-38-t0r" id="XeT-aI-vy7"/>
@@ -144,7 +175,7 @@
             </objects>
             <point key="canvasLocation" x="1192" y="265"/>
         </scene>
-        <!--Add Link View Controller-->
+        <!--Add Referral Link-->
         <scene sceneID="kBs-1C-vEW">
             <objects>
                 <viewController id="uBI-WA-4Hm" customClass="AddLinkViewController" sceneMemberID="viewController">
@@ -164,35 +195,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Referral Link" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufk-Ky-4SB">
-                                <rect key="frame" x="16" y="103" width="568" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="eyl-PV-s3t"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ufk-Ky-4SB" firstAttribute="leading" secondItem="nzZ-m7-tPA" secondAttribute="leadingMargin" constant="263" id="9DI-OE-HBS"/>
-                            <constraint firstItem="Ufk-Ky-4SB" firstAttribute="top" secondItem="BK4-kw-Rpd" secondAttribute="bottom" constant="39" id="HXL-QH-2Wb"/>
                             <constraint firstItem="KeK-k3-JOO" firstAttribute="leading" secondItem="nzZ-m7-tPA" secondAttribute="leadingMargin" id="LZG-AX-TkH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ufk-Ky-4SB" secondAttribute="trailing" constant="263" id="NaS-Fq-dWS"/>
-                            <constraint firstItem="Ufk-Ky-4SB" firstAttribute="trailing" secondItem="nzZ-m7-tPA" secondAttribute="trailingMargin" id="PzV-9c-3lb"/>
-                            <constraint firstItem="Ufk-Ky-4SB" firstAttribute="leading" secondItem="nzZ-m7-tPA" secondAttribute="leadingMargin" id="Vdz-5G-tVI"/>
                             <constraint firstItem="KeK-k3-JOO" firstAttribute="top" secondItem="BK4-kw-Rpd" secondAttribute="bottom" constant="100" id="qkB-7A-Etv"/>
                             <constraint firstItem="KeK-k3-JOO" firstAttribute="trailing" secondItem="nzZ-m7-tPA" secondAttribute="trailingMargin" id="uC0-6g-YLP"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="9DI-OE-HBS"/>
-                                <exclude reference="NaS-Fq-dWS"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="7aF-Fl-Aaw">
+                    <navigationItem key="navigationItem" title="Add Referral Link" id="7aF-Fl-Aaw">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ML8-pa-f37">
                             <connections>
                                 <action selector="closeAddLink:" destination="uBI-WA-4Hm" id="dUo-RF-URf"/>
@@ -248,7 +259,7 @@
             </objects>
             <point key="canvasLocation" x="1971" y="265"/>
         </scene>
-        <!--Update Link View Controller-->
+        <!--Update Referral Link-->
         <scene sceneID="mtF-K7-jEu">
             <objects>
                 <viewController id="lv0-hf-bdM" customClass="UpdateLinkViewController" sceneMemberID="viewController">
@@ -260,25 +271,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update a Referral Link" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvY-Tk-rB1">
-                                <rect key="frame" x="16" y="118" width="568" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Ite-s5-pRU"/>
-                                    <constraint firstAttribute="height" constant="21" id="WNe-kZ-QT3"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="z4f-VJ-qaH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="WNe-kZ-QT3"/>
-                                        <exclude reference="z4f-VJ-qaH"/>
-                                    </mask>
-                                </variation>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="HackerNews" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f0A-od-a0O">
-                                <rect key="frame" x="16" y="169" width="568" height="30"/>
+                                <rect key="frame" x="16" y="145" width="568" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="0DH-kS-XJv"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="5VG-VW-dfp"/>
@@ -296,27 +290,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="f0A-od-a0O" firstAttribute="top" secondItem="gvY-Tk-rB1" secondAttribute="bottom" constant="41" id="7HP-LO-dyd"/>
                             <constraint firstItem="f0A-od-a0O" firstAttribute="leading" secondItem="Epm-zj-r0k" secondAttribute="leadingMargin" id="9Hl-Ct-NdP"/>
-                            <constraint firstItem="gvY-Tk-rB1" firstAttribute="top" secondItem="24K-Ob-eJx" secondAttribute="bottom" constant="8" id="LN1-IN-2U7"/>
-                            <constraint firstItem="gvY-Tk-rB1" firstAttribute="top" secondItem="24K-Ob-eJx" secondAttribute="bottom" constant="54" id="Mqy-RK-5A2"/>
                             <constraint firstItem="f0A-od-a0O" firstAttribute="trailing" secondItem="Epm-zj-r0k" secondAttribute="trailingMargin" id="NoG-lB-i8e"/>
-                            <constraint firstItem="f0A-od-a0O" firstAttribute="top" secondItem="gvY-Tk-rB1" secondAttribute="bottom" constant="30" id="TpM-fq-aE4"/>
-                            <constraint firstItem="gvY-Tk-rB1" firstAttribute="trailing" secondItem="Epm-zj-r0k" secondAttribute="trailingMargin" id="b15-Hd-AyM"/>
-                            <constraint firstItem="gvY-Tk-rB1" firstAttribute="leading" secondItem="Epm-zj-r0k" secondAttribute="leadingMargin" id="jys-7V-9kG"/>
+                            <constraint firstItem="f0A-od-a0O" firstAttribute="top" secondItem="24K-Ob-eJx" secondAttribute="bottom" constant="81" id="Vd4-9c-JmX"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="LN1-IN-2U7"/>
-                                <exclude reference="7HP-LO-dyd"/>
-                            </mask>
-                        </variation>
                     </view>
                     <toolbarItems>
                         <barButtonItem title="Item" id="Mze-mh-FAP"/>
                         <barButtonItem title="Item" id="ZCb-xr-hXL"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" id="Lgs-33-XKh">
+                    <navigationItem key="navigationItem" title="Update Referral Link" id="Lgs-33-XKh">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ALT-Ao-eGH">
                             <connections>
                                 <action selector="closeUpdateLink:" destination="lv0-hf-bdM" id="Duv-0H-Xq5"/>
@@ -331,7 +314,6 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="linkTextField" destination="f0A-od-a0O" id="gNQ-dF-vaC"/>
-                        <outlet property="updateLinkMessage" destination="gvY-Tk-rB1" id="Lsf-n5-aPG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nwY-KF-cTR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -339,4 +321,7 @@
             <point key="canvasLocation" x="1569" y="1010"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="TedStevens.png" width="349" height="144"/>
+    </resources>
 </document>
