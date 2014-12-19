@@ -182,7 +182,7 @@
         [viewController setManagedObjectContext:self.managedObjectContext];
         
         if (self.selection) {
-            NSManagedObject *linkRecord = [self.fetchedResultsController objectAtIndexPath:self.selection];
+            Link *linkRecord = [self.fetchedResultsController objectAtIndexPath:self.selection];
             
             if (linkRecord) {
                 [viewController setLinkRecord:linkRecord];
