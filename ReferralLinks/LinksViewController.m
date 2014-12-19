@@ -86,9 +86,12 @@
 - (void)configureCell:(LinkTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     //Fetch
     NSManagedObject *link = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    //make string
+    NSString *titleLabelText = [NSString stringWithFormat:@"%@    (%@ clicks)", [link valueForKey:@"title"], (NSNumber *)[link valueForKey:@"count"]];
+    
     //Update cell
-    [cell.titleLabel setText:[link valueForKey:@"title"]];
-    [cell.countLabel setText:[NSString stringWithFormat:@"%@ clicks", (NSNumber *)[link valueForKey:@"count"]]];
+    [cell.titleLabel setText:titleLabelText];
 }
 
 - (IBAction)toggleEditMode:(id)sender {

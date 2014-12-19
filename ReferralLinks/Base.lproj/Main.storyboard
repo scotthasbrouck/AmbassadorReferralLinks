@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YgB-2L-VmN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -72,9 +71,10 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zE9-uK-d1Z" id="RX4-Mi-sct">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YA-EH-NG2">
-                                                    <rect key="frame" x="8" y="11" width="325" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YA-EH-NG2">
+                                                    <rect key="frame" x="8" y="11" width="568" height="21"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="7nT-0Z-2TD"/>
                                                         <constraint firstAttribute="width" constant="429" id="IGw-d3-c7g"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -86,44 +86,24 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWP-Xe-vjT">
-                                                    <rect key="frame" x="376" y="11" width="200" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="200" id="caA-ku-Okz"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="caA-ku-Okz"/>
-                                                        </mask>
-                                                    </variation>
-                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="3YA-EH-NG2" firstAttribute="top" secondItem="RX4-Mi-sct" secondAttribute="topMargin" constant="3" id="0Vo-7s-j5F"/>
                                                 <constraint firstItem="3YA-EH-NG2" firstAttribute="centerY" secondItem="RX4-Mi-sct" secondAttribute="centerY" id="2dd-r2-C1y"/>
-                                                <constraint firstItem="3YA-EH-NG2" firstAttribute="baseline" secondItem="ZWP-Xe-vjT" secondAttribute="baseline" id="6ud-h5-5hS"/>
-                                                <constraint firstItem="ZWP-Xe-vjT" firstAttribute="leading" secondItem="3YA-EH-NG2" secondAttribute="trailing" constant="8" symbolic="YES" id="PM7-YC-r9x"/>
+                                                <constraint firstItem="3YA-EH-NG2" firstAttribute="trailing" secondItem="RX4-Mi-sct" secondAttribute="trailingMargin" id="Me1-qB-bUh"/>
+                                                <constraint firstItem="3YA-EH-NG2" firstAttribute="leading" secondItem="RX4-Mi-sct" secondAttribute="leadingMargin" id="Wlf-Cn-Ls0"/>
                                                 <constraint firstItem="3YA-EH-NG2" firstAttribute="leading" secondItem="RX4-Mi-sct" secondAttribute="leadingMargin" id="f38-6B-CCe"/>
                                                 <constraint firstItem="3YA-EH-NG2" firstAttribute="top" secondItem="RX4-Mi-sct" secondAttribute="topMargin" id="i0V-DG-3df"/>
-                                                <constraint firstItem="3YA-EH-NG2" firstAttribute="firstBaseline" secondItem="ZWP-Xe-vjT" secondAttribute="firstBaseline" id="soW-xJ-ffn"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ZWP-Xe-vjT" secondAttribute="trailing" id="ufp-Hv-pjx"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="2dd-r2-C1y"/>
-                                                    <exclude reference="6ud-h5-5hS"/>
                                                     <exclude reference="f38-6B-CCe"/>
                                                     <exclude reference="i0V-DG-3df"/>
-                                                    <exclude reference="soW-xJ-ffn"/>
-                                                    <exclude reference="PM7-YC-r9x"/>
-                                                    <exclude reference="ufp-Hv-pjx"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="countLabel" destination="ZWP-Xe-vjT" id="JoZ-5S-0o6"/>
                                             <outlet property="titleLabel" destination="3YA-EH-NG2" id="Q2d-jr-7xy"/>
                                         </connections>
                                     </tableViewCell>
