@@ -11,6 +11,7 @@
 #import "LinkTableViewCell.h"
 #import "AddLinkViewController.h"
 #import "UpdateLinkViewController.h"
+#import "LinkLandingPageViewController.h"
 
 @interface LinksViewController ()
 
@@ -29,6 +30,9 @@
     
     //Sort by count
     [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"count" ascending:YES]]];
+    
+    //selection during editing
+    self.tableView.allowsSelectionDuringEditing = YES;
     
     //Init Fetch Results
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
@@ -140,7 +144,11 @@
 
     [self setSelection:indexPath];
     
-    [self performSegueWithIdentifier: @"updateLinkViewController" sender:self];
+    if(self.tableView.editing) {
+        [self performSegueWithIdentifier: @"updateLinkViewController" sender:self];
+    } else {
+        [self performSegueWithIdentifier: @"linkLandingViewController" sender:self];
+    }
 }
 
  #pragma mark - Navigation
@@ -168,6 +176,22 @@
             [self setSelection:nil];
         }
     }
+    //viewing a link
+    else if ([segue.identifier isEqualToString:@"linkLandingViewController"]){
+        LinkLandingPageViewController *viewController = (LinkLandingPageViewController *)[segue destinationViewController];
+        [viewController setManagedObjectContext:self.managedObjectContext];
+        
+        if (self.selection) {
+            NSManagedObject *linkRecord = [self.fetchedResultsController objectAtIndexPath:self.selection];
+            
+            if (linkRecord) {
+                [viewController setLinkRecord:linkRecord];
+            }
+            
+            // Reset Selection
+            [self setSelection:nil];
+        }
+}
 }
 
 @end
